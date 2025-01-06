@@ -15,8 +15,6 @@ int main() {
     i2c_init(I2C_PORT, 400 * 1000);  // 400 kHz
     gpio_set_function(I2C_SDA, GPIO_FUNC_I2C);  // SDA
     gpio_set_function(I2C_SCL, GPIO_FUNC_I2C);  // SCL
-    gpio_pull_up(I2C_SDA);
-    gpio_pull_up(I2C_SCL);
 
     // Initialize Trill device
     if (trill.setup(I2C_PORT, I2C_SDA, I2C_SCL, Trill::SQUARE, 0x28) != 0) {
